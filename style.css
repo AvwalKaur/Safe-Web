@@ -7,4 +7,12 @@ body{
     text-align : center;
     font-size : 50 px;
 }
-.hero
+
+
+
+
+
+/*Section 3 --> Installation Guide*/
+#install-guide{
+    border: 2px solid black;
+}
