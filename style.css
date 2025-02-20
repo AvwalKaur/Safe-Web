@@ -6,6 +6,7 @@ body{
     color : #fff;
     text-align : center;
     font-size : 50 px;
+    overflow-x: hidden;
 }
 
 
@@ -15,4 +16,75 @@ body{
 /*Section 3 --> Installation Guide*/
 #install-guide{
     border: 2px solid black;
+    text-align: center;
+    margin: 1.5rem;
+    background-color: #fff;
+    color: #000;
+}
+
+.steps{
+    /* border: 2px solid #04304c; */
+    background-color: #f1f5f8cf;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: 12rem;
+    width: 70%;
+    display: flex;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid green; */
+    padding: 1rem;
+}
+.content-points{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img-class{
+    border-radius: 1rem;
+    width: 50%;
+}
+
+/*Section 4 CSS*/
+.sdg-slider-container {
+    width: 100%;
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper {
+    width: 80%;
+    height: auto;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.swiper-slide p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
