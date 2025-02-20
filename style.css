@@ -9,10 +9,155 @@ body{
     overflow-x: hidden;
 }
 
+.hero{
+    position : relative ;
+    width : 100%;
+    height : 100vh;
+    display : flex;
+    flex-direction : column ;
+    align-items : center;
+    justify-content : center ;
+    text-align : center;
+    background : url("icons/Browse Safely.jpg") center/cover no-repeat;
+    padding : 20px;
+    color : #fff; 
+}
+/* Light Overlay for Hero Section */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4,48,75,0.6); /* Light opacity */
+    z-index: 1;
+}
+.hero-content {
+    position : relative ;
+    z-index: 2;
+
+}
+.hero h1{
+    font-size : 3rem;
+    font-weight : bold;
+    margin-bottom : 10px;
+}
+.cta-buttons {
+    display : flex;
+    flex-direction : row ;
+    justify-content : center;
+    align-items : center;
+    gap : 20px;
+    margin-top : 20px;
+}
+.cta-buttons a {
+    text-decoration : none ;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    width : 200px;
+}
+.install-btn{
+    background : #28a745;
+    color : #fff;
+}
+.install-btn:hover{
+    background : #218838;
+}
+.demo-btn{
+    background : #007bff;
+    color : #fff;
+}
+.demo-btn:hover{
+    background : #0056b3;
+}
+
+/* Section 2*/
+.about {
+    height: 35rem;
+    margin: 1rem;
+    text-align: center;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #04304b;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.features {
+    display: flex;
+    justify-content : center;
+    gap: 20px;
+    flex-wrap : wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.feature {
+    flex : 1;
+    max-width : 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition : transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover{
+    transform: scaleX(1.05);
+}
+/* Hover effect  */
+.feature:hover {
+    transform: translateY(-10px); /* Moves the box up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a deeper shadow */
+}
+
+/* Fade-in effect on load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature {
+    animation: fadeIn 0.5s ease-in-out;
+}
 
 
+.feature img {
+    width: 60px;
+    margin-bottom: 10px;
+}
 
+.feature h3 {
+    font-size: 1.4rem;
+    color: #04304b;
+}
 
+.feature p {
+    font-size: 1rem;
+    color: #666;
+}
 /*Section 3 --> Installation Guide*/
 #install-guide{
     border: 2px solid black;
@@ -27,10 +172,13 @@ body{
     background-color: #f1f5f8cf;
     border-radius: 2rem;
     padding: 1rem;
-    height: 12rem;
+    height: 15rem;
     width: 70%;
     display: flex;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.steps:hover{
+    transform: scaleX(1.01);
 }
 .content{
     display: flex;
@@ -52,39 +200,60 @@ body{
 }
 
 /*Section 4 CSS*/
-.sdg-slider-container {
-    width: 100%;
-    padding: 20px;
-    background: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.slider-container {
+            width: 100%;
+            overflow: hidden;
+            background: #f8f9fa;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            position: relative;
+        }
 
-.swiper {
-    width: 80%;
-    height: auto;
-}
+        /* Scrolling Track */
+        .slider-track {
+            display: flex;
+            gap: 40px;
+            animation: scroll 25s linear infinite;
+        }
 
-.swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+        /* SDG Card */
+        .sdg-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            flex-shrink: 0;
+        }
 
-.swiper-slide img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-}
+        .sdg-slide img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
 
-.swiper-slide p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
+        .sdg-slide p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Infinite Scroll Animation */
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Duplicate slides for seamless looping */
+        .slider-track::after {
+            content: "";
+            display: flex;
+            gap: 40px;
+            animation: inherit;
+        }
